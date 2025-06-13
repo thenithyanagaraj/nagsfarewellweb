@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Lunch Date 💕</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Music -->
+    <audio id="background-music" loop preload="auto">
+        <source src="assets/audio/abi-naa-jao-.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div id="app" class="app-container">
+        <!-- Floating Hearts Background -->
+        <div id="floating-hearts" class="floating-hearts"></div>
+
+        <!-- Scene Container -->
+        <div id="scene-container" class="scene-container">
+            <!-- Welcome Scene -->
+            <div id="scene-0" class="scene active">
+                <div class="scene-content">
+                    <div class="welcome-header">
+                        <h1 class="main-title">Hey Beautiful</h1>
+                        <p class="subtitle">Ready for our special lunch date, Nags? 💕</p>
+                    </div>
+                    
+                    <div class="door-container" onclick="openDoor()">
+                        <div id="door" class="door">
+                            <div class="door-handle"></div>
+                            <div class="door-panel"></div>
+                        </div>
+                        <div class="floating-heart">💖</div>
+                    </div>
+                    
+                    <p class="instruction">Come on in, babe! I've been waiting for you 💌</p>
+                    
+                    <!-- Music Control Button in Scene -->
+                    <div class="music-control-scene">
+                        <button id="music-toggle" class="music-toggle" onclick="toggleMusic()">
+                            <span id="music-icon">🎵</span>
+                            <span id="music-text">Set the Perfect Mood</span>
+                        </button>
+                    </div>
+                    
+                    <div id="door-opened" class="door-opened-message hidden">
+                        <div class="door-icon">🚪</div>
+                        <p class="welcome-in">There's my gorgeous girl! ✨</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ambiance Scene -->
+            <div id="scene-1" class="scene lights-scene">
+                <div class="scene-content">
+                    <div class="light-switch-container">
+                        <div id="light-switch" class="light-switch" onclick="turnOnLights()">
+                            <div id="switch-toggle" class="switch-toggle"></div>
+                        </div>
+                    </div>
+                    
+                    <div id="fairy-lights" class="fairy-lights hidden"></div>
+                    <div id="corner-hearts" class="corner-hearts hidden">
+                        <div class="corner-heart top-left">💖</div>
+                        <div class="corner-heart top-right">💖</div>
+                        <div class="corner-heart bottom-left">💖</div>
+                        <div class="corner-heart bottom-right">💖</div>
+                    </div>
+                    
+                    <div id="lights-message" class="lights-message hidden">
+                        <h2 class="scene-title">Perfect ambiance, just for us</h2>
+                        <p class="scene-subtitle">You know I love setting the mood when you're around ✨</p>
+                    </div>
+                    
+                    <p id="lights-instruction" class="instruction">Let me set the perfect mood for our date</p>
+                </div>
+            </div>
+
+            <!-- Memories Scene -->
+            <div id="scene-2" class="scene">
+                <div class="scene-content">
+                    <h2 class="scene-title">Remember These Moments?</h2>
+                    
+                    <div class="memories-grid">
+                        <div class="memory-card" data-caption="That Goa trip! 🌊">
+                            <img src="assets/images/first.jpg" alt="Goa trip memory" onerror="this.src='https://images.pexels.com/photos/1371360/pexels-photo-1371360.jpeg?auto=compress&cs=tinysrgb&w=400'">
+                            <div class="memory-caption">Our First Movie Date 🌊</div>
+                        </div>
+                        <div class="memory-card" data-caption="Office Maggi dates 🍜">
+                            <img src="assets/images/second.jpg" alt="Office Maggi memory" onerror="this.src='https://images.pexels.com/photos/5490778/pexels-photo-5490778.jpeg?auto=compress&cs=tinysrgb&w=400'">
+                            <div class="memory-caption">You Instantly felt home</div>
+                        </div>
+                        <div class="memory-card" data-caption="That crazy Friday night">
+                            <img src="assets/images/third.jpg" alt="Crazy Friday memory" onerror="this.src='https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=400'">
+                            <div class="memory-caption">I love you nags</div>
+                        </div>
+                        <div class="memory-card" data-caption="Our coffee rituals ☕">
+                            <img src="assets/images/fourth.jpg" alt="Coffee breaks memory" onerror="this.src='https://images.pexels.com/photos/1267324/pexels-photo-1267324.jpeg?auto=compress&cs=tinysrgb&w=400'">
+                            <div class="memory-caption">Classic theif</div>
+                        </div>
+                        <div class="memory-card" data-caption="Weekend adventures 🎉">
+                            <img src="assets/images/fifth.jpg" alt="Weekend vibes memory" onerror="this.src='https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg?auto=compress&cs=tinysrgb&w=400'">
+                            <div class="memory-caption">Ill miss your laughs</div>
+                        </div>
+                        <div class="memory-card" data-caption="All those lunch dates 🍽️">
+                            <img src="assets/images/sixth.jpg" alt="Team lunches memory" onerror="this.src='https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=400'">
+                            <div class="memory-caption">I love working with you</div>
+                        </div>
+                    </div>
+                    
+                    <p class="scene-description">
+                        Babe, do you remember when we first met at that movie? Just a smile, a bit of talking, 
+                        and somehow it felt like I'd known you forever. You've got this incredible way of making 
+                        everything feel easy, even when the world is all over the place. 💕
+                    </p>
+                    
+                    <button class="next-button" onclick="nextScene()">Let's have our lunch! →</button>
+                </div>
+            </div>
+
+            <!-- Lunch Scene -->
+            <div id="scene-3" class="scene">
+                <div class="scene-content">
+                    <h2 class="scene-title">Our Special Lunch Date</h2>
+                    
+                    <div class="table-container" onclick="setTable()">
+                        <div id="dinner-table" class="dinner-table">
+                            <div id="table-items" class="table-items hidden">
+                                <div class="plate left-plate"></div>
+                                <div class="plate right-plate"></div>
+                                <div class="glass left-glass">🥂</div>
+                                <div class="glass right-glass">🥂</div>
+                                <div class="utensils left-utensils">🍴</div>
+                                <div class="utensils right-utensils">🍴</div>
+                                <div class="candle top-candle">
+                                    <div class="candle-stick"></div>
+                                    <div class="candle-flame"></div>
+                                </div>
+                                <div class="candle bottom-candle">
+                                    <div class="candle-stick"></div>
+                                    <div class="candle-flame"></div>
+                                </div>
+                            </div>
+                            <div id="floating-hearts-dinner" class="floating-hearts-dinner hidden"></div>
+                        </div>
+                    </div>
+                    
+                    <div id="dinner-message" class="dinner-message hidden">
+                        <p class="scene-description">
+                            You know what I love about sitting with you? The way you smile when we're mid-debate 
+                            about some ridiculous thing. The way you share your music with me, knowing exactly 
+                            what track I need to hear. And how peaceful you look - like the world slows down for you. 
+                            I secretly wish I could be part of that calmness more often. 🍽️✨
+                        </p>
+                        <button class="next-button" onclick="nextScene()">Something sweet? 🍰</button>
+                    </div>
+                    
+                    <p id="dinner-instruction" class="instruction">Let me set our table for this special moment ✨</p>
+                </div>
+            </div>
+
+            <!-- Dessert Scene -->
+            <div id="scene-4" class="scene">
+                <div class="scene-content">
+                    <h2 class="scene-title">A Sweet Moment</h2>
+                    
+                    <div class="cake-container" onclick="lightCandles()">
+                        <div id="cake" class="cake">
+                            <div class="cake-bottom"></div>
+                            <div class="cake-top"></div>
+                            <div class="cake-decorations">
+                                <div class="decoration dec-1"></div>
+                                <div class="decoration dec-2"></div>
+                                <div class="decoration dec-3"></div>
+                                <div class="decoration dec-4"></div>
+                            </div>
+                            <div class="candles">
+                                <div class="candle-holder">
+                                    <div class="candle-stick"></div>
+                                    <div id="flame-1" class="candle-flame hidden"></div>
+                                </div>
+                                <div class="candle-holder">
+                                    <div class="candle-stick"></div>
+                                    <div id="flame-2" class="candle-flame hidden"></div>
+                                </div>
+                                <div class="candle-holder">
+                                    <div class="candle-stick"></div>
+                                    <div id="flame-3" class="candle-flame hidden"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="cake-glow" class="cake-glow hidden"></div>
+                    </div>
+                    
+                    <div id="cake-message" class="cake-message hidden">
+                        <div class="message-card">
+                            <h3 class="message-title">That smile of yours, babe 💖</h3>
+                            <p class="message-text">
+                                You don't even realize how much light you bring into the room just with that one smile. 
+                                It's the kind of smile that makes everything feel okay, even when it's really not. 
+                                You're just... you. And that's everything.
+                            </p>
+                            <button class="next-button" onclick="nextScene()">I have something to tell you ⭐</button>
+                        </div>
+                        <div id="sparkles" class="sparkles"></div>
+                    </div>
+                    
+                    <div id="confetti" class="confetti hidden"></div>
+                    
+                    <p id="cake-instruction" class="instruction">Let's make this moment even sweeter 🍰</p>
+                </div>
+            </div>
+
+            <!-- Heart-to-Heart Scene -->
+            <div id="scene-5" class="scene wishes-scene">
+                <div class="scene-content">
+                    <h2 class="scene-title">From My Heart ⭐</h2>
+                    
+                    <div class="window-frame">
+                        <div class="window-panes">
+                            <div class="window-divider-h"></div>
+                            <div class="window-divider-v"></div>
+                        </div>
+                        <div class="stars-container">
+                            <div class="star" onclick="clickStar(0)" data-wish="You make everything feel easy ☀️">⭐</div>
+                            <div class="star" onclick="clickStar(1)" data-wish="I'm in awe of how you carry yourself ✨">⭐</div>
+                            <div class="star" onclick="clickStar(2)" data-wish="You could waltz into any room and own it">⭐</div>
+                            <div class="star" onclick="clickStar(3)" data-wish="Your eyes have stories to tell 😊">⭐</div>
+                            <div class="star" onclick="clickStar(4)" data-wish="I see the quiet strength you have">⭐</div>
+                            <div class="star" onclick="clickStar(5)" data-wish="You bring calm to my chaos 💫">⭐</div>
+                            <div class="star" onclick="clickStar(6)" data-wish="You're the heartbeat of our team 🌍">⭐</div>
+                            <div class="star" onclick="clickStar(7)" data-wish="I'm bloody lucky to have you around ❤️">⭐</div>
+                        </div>
+                        <div id="twinkling-stars" class="twinkling-stars"></div>
+                    </div>
+                    
+                    <div id="floating-wishes" class="floating-wishes"></div>
+                    
+                    <p id="wishes-instruction" class="instruction">These are all the things I think about you ✨</p>
+                    
+                    <div id="wishes-complete" class="wishes-complete hidden">
+                        <div class="completion-card">
+                            <p class="completion-title">I don't always say it out loud... 🌟</p>
+                            <p class="completion-text">But I love you. I really do.</p>
+                            <button class="next-button" onclick="nextScene()">Read my full letter 💌</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Love Letter Scene -->
+            <div id="scene-6" class="scene">
+                <div class="scene-content">
+                    <div id="falling-hearts-goodbye" class="falling-hearts-goodbye"></div>
+                    
+                    <div class="goodbye-content">
+                        <h1 class="goodbye-title">I Love You, Nags</h1>
+                        
+                        <div class="goodbye-message">
+                            <p class="goodbye-text-main">
+                                I love you for being you — for the way you make everything better by just being there.
+                            </p>
+                            <p class="goodbye-text-secondary">
+                                For the way you bring <span class="highlight">light, calm, and real joy</span> to this team, 
+                                to Table Turturee, and to me.
+                            </p>
+                            <p class="goodbye-text-final">
+                                You're not just a committee member of turturee — you're the heartbeat of it all. 
+                                I'm bloody lucky to have you around, not just at work, but in all the little ways 
+                                you brighten things up. ✨
+                            </p>
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button class="action-button primary" onclick="replayJourney()">
+                                🔄 Relive Our Date
+                            </button>
+                            <button class="action-button secondary" onclick="showLetter()">
+                                💖 Read Full Love Letter
+                            </button>
+                            <button class="action-button gradient" onclick="downloadMessages()">
+                                📥 Keep These Words
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Letter Modal -->
+        <div id="letter-modal" class="letter-modal hidden" onclick="hideLetter()">
+            <div class="letter-content" onclick="event.stopPropagation()">
+                <div class="letter-header">
+                    <div class="letter-hearts">
+                        <span>💖</span>
+                        <span>💕</span>
+                        <span>💖</span>
+                    </div>
+                    <p class="letter-date">Fri, 25 April 2025</p>
+                </div>
+                
+                <div class="letter-body">
+                    <p class="letter-greeting">Nag's Babe,</p>
+                    
+                    <p class="letter-paragraph">
+                        You know what’s mad? Sometimes I’ll just be sat there, and suddenly I’m grinning like an idiot thinking about you — something you said, the way you do that little smirk, or just the way you carry yourself like the world better move aside. Those little bits of you? They stick with me.
+                    </p>
+                    
+                    <p class="letter-paragraph">
+                        Being on Table Turturee with you doesn’t feel like work half the time — it’s more like this lovely, chaotic corner of the world where you somehow make everything feel that little bit steadier. You’ve got this quiet way of making things better without even realising it.
+                    </p>
+                    
+                    <p class="letter-paragraph">
+                        What I’ve always admired is that you don’t try to be noticed. You just are. You walk into a room and somehow it feels different. Calmer. Lighter. Like you brought a bit of peace in with you. It’s not something people can fake — it’s just who you are.
+                    </p>
+                    
+                    <p class="letter-paragraph">
+                        You’ve got this brilliant mix — sharp as anything when it comes to an idea, but soft where it matters. And that laugh? Honestly, I’d bottle it if I could. It’s the kind of sound that makes a crap day feel a bit less crap, you know?
+                    </p>
+                    
+                    <p class="letter-paragraph">
+                        And I don’t think you realise just how much you shift the mood around you. One proper look from you, and suddenly the noise in my head quiets down a bit. One of your cheeky little jokes, and everything feels that much lighter.
+                    </p>
+                    
+                    <p class="letter-paragraph">
+                        So yeah — this is just me, trying to say (without mucking it up too much): you matter. Properly. To this team. To me. You’re not just a part of Turturee — you’re the heart of it. And honestly? I reckon I’m well lucky to know you. Love you to bits, I do.
+                    </p>
+                    
+                    <div class="letter-signature">
+                        <p class="signature-love">With all the love I've got,</p>
+                        <p class="signature-name">Nithya Nagaraj 💕</p>
+                    </div>
+                </div>
+                
+                <button class="close-button" onclick="hideLetter()">Close</button>
+            </div>
+        </div>
+
+        <!-- Decorative Corner Elements -->
+        <div class="corner-decoration top-left"></div>
+        <div class="corner-decoration top-right"></div>
+        <div class="corner-decoration bottom-left"></div>
+        <div class="corner-decoration bottom-right"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
